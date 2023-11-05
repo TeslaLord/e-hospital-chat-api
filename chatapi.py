@@ -137,7 +137,7 @@ class DbHandler():
 
     def get_history(self, patient_id):
         try:
-            query = f"SELECT * FROM chatbot_conversation WHERE patient_id = {patient_id} ORDER BY timestamp ASC;"
+            query = f"SELECT * FROM chatbot_conversation WHERE patient_id = '{patient_id}' ORDER BY timestamp ASC;"
             self.cursorObject.execute(query)
             data = self.cursorObject.fetchall()
             return data
